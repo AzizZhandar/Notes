@@ -21,14 +21,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         title = "Notes"
     }
     
-    //Creating new note  function
+//  Creating new note function (Show EntryViewController)
     @IBAction func didTapNewNote() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "new") as? EntryViewController else {
             return
         }
         vc.title = "New Note"
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.completion = { noteTitle, note in
+        vc.completion = { noteTitle, note, image in
             self.navigationController?.popToRootViewController(animated: true)
             self.models.append((title: noteTitle, note: note))
             self.label.isHidden = true
@@ -36,9 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.table.reloadData()
         }
         navigationController?.pushViewController(vc, animated: true)
-        
     }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
@@ -56,7 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let model = models[indexPath.row]
         
-        //show noteController
+//      Show NoteViewController
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "note") as? NoteViewController else {
             return
         }
@@ -65,6 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.title = "Note"
         vc.noteTitle = model.title
         vc.note = model.note
+//        vc.image = model.image
         
         navigationController?.pushViewController(vc, animated: true)
     }

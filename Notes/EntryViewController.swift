@@ -22,6 +22,14 @@ class EntryViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         navigationItem.rightBarButtonItems = [saveButton, imageButton]
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            imageView.image = image
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
     
     @objc func didTapSave() {
         if let text = titleField.text, !text.isEmpty, !noteField.text.isEmpty {
@@ -38,12 +46,6 @@ class EntryViewController: UIViewController, UIImagePickerControllerDelegate, UI
         present(vcImage, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            imageView.image = image
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

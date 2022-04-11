@@ -13,6 +13,8 @@
 		3F66D59627FAFBFC004EA3E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F66D59427FAFBFC004EA3E3 /* Main.storyboard */; };
 		3F66D59827FAFBFF004EA3E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F66D59727FAFBFF004EA3E3 /* Assets.xcassets */; };
 		3F66D59B27FAFBFF004EA3E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F66D59927FAFBFF004EA3E3 /* LaunchScreen.storyboard */; };
+		3F66D5A327FAFC36004EA3E3 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D5A227FAFC36004EA3E3 /* NoteViewController.swift */; };
+		3F66D5A527FAFC4E004EA3E3 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D5A427FAFC4E004EA3E3 /* EntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3F66D59727FAFBFF004EA3E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F66D59A27FAFBFF004EA3E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F66D59C27FAFBFF004EA3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F66D5A227FAFC36004EA3E3 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		3F66D5A427FAFC4E004EA3E3 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				3F66D59727FAFBFF004EA3E3 /* Assets.xcassets */,
 				3F66D59927FAFBFF004EA3E3 /* LaunchScreen.storyboard */,
 				3F66D59C27FAFBFF004EA3E3 /* Info.plist */,
+				3F66D5A227FAFC36004EA3E3 /* NoteViewController.swift */,
+				3F66D5A427FAFC4E004EA3E3 /* EntryViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F66D5A327FAFC36004EA3E3 /* NoteViewController.swift in Sources */,
+				3F66D5A527FAFC4E004EA3E3 /* EntryViewController.swift in Sources */,
 				3F66D59327FAFBFC004EA3E3 /* ViewController.swift in Sources */,
 				3F66D58F27FAFBFC004EA3E3 /* AppDelegate.swift in Sources */,
 				3F66D59127FAFBFC004EA3E3 /* SceneDelegate.swift in Sources */,
@@ -285,7 +293,7 @@
 		3F66D5A027FAFBFF004EA3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -313,7 +321,7 @@
 		3F66D5A127FAFBFF004EA3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

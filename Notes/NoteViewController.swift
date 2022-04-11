@@ -11,14 +11,17 @@ class NoteViewController: UIViewController {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var noteLabel: UITextView!
+    @IBOutlet var imageV: UIImageView!
     
     public var noteTitle: String = ""
     public var note: String = ""
+    public var image: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = noteTitle
         noteLabel.text = note
+        imageV.image = UIImage(named: image)
 
     }
     

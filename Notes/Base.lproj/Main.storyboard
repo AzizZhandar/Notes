@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BXj-iE-1Me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BXj-iE-1Me">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -164,31 +164,39 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="eGn-5M-HLs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kvr-Sr-ulV">
-                                <rect key="frame" x="10" y="124" width="394" height="728"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kvr-Sr-ulV">
+                                <rect key="frame" x="10" y="124" width="394" height="338"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C1s-BT-UNo">
+                                <rect key="frame" x="10" y="472" width="394" height="380"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qmc-pc-nxY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Qmc-pc-nxY" firstAttribute="bottom" secondItem="C1s-BT-UNo" secondAttribute="bottom" constant="10" id="8I8-9C-Xh3"/>
+                            <constraint firstItem="C1s-BT-UNo" firstAttribute="top" secondItem="kvr-Sr-ulV" secondAttribute="bottom" constant="10" id="9mx-do-OCH"/>
                             <constraint firstItem="gHk-eV-xE7" firstAttribute="leading" secondItem="Qmc-pc-nxY" secondAttribute="leading" constant="10" id="Awb-uT-VIF"/>
                             <constraint firstItem="kvr-Sr-ulV" firstAttribute="leading" secondItem="Qmc-pc-nxY" secondAttribute="leading" constant="10" id="LjB-Si-Lkg"/>
                             <constraint firstItem="kvr-Sr-ulV" firstAttribute="top" secondItem="gHk-eV-xE7" secondAttribute="bottom" constant="10" id="aOR-xG-0nu"/>
+                            <constraint firstItem="Qmc-pc-nxY" firstAttribute="trailing" secondItem="C1s-BT-UNo" secondAttribute="trailing" constant="10" id="egh-Nz-SAk"/>
                             <constraint firstItem="Qmc-pc-nxY" firstAttribute="trailing" secondItem="kvr-Sr-ulV" secondAttribute="trailing" constant="10" id="fIp-B8-Aww"/>
-                            <constraint firstItem="Qmc-pc-nxY" firstAttribute="bottom" secondItem="kvr-Sr-ulV" secondAttribute="bottom" constant="10" id="grE-KD-mKc"/>
+                            <constraint firstItem="Qmc-pc-nxY" firstAttribute="bottom" secondItem="kvr-Sr-ulV" secondAttribute="bottom" constant="400" id="grE-KD-mKc"/>
                             <constraint firstItem="gHk-eV-xE7" firstAttribute="top" secondItem="Qmc-pc-nxY" secondAttribute="top" constant="10" id="guG-iA-RNH"/>
                             <constraint firstItem="Qmc-pc-nxY" firstAttribute="trailing" secondItem="gHk-eV-xE7" secondAttribute="trailing" constant="10" id="liv-12-f51"/>
+                            <constraint firstItem="C1s-BT-UNo" firstAttribute="leading" secondItem="Qmc-pc-nxY" secondAttribute="leading" constant="10" id="yXP-1y-z4I"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageV" destination="C1s-BT-UNo" id="95A-Cd-d2p"/>
                         <outlet property="noteLabel" destination="kvr-Sr-ulV" id="3lp-XJ-eJ5"/>
                         <outlet property="titleLabel" destination="gHk-eV-xE7" id="xMH-LX-bUX"/>
                     </connections>
