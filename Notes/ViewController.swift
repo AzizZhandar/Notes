@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var table: UITableView!
     @IBOutlet var label: UILabel!
 
-    var models: [(title: String, note: String)] = []
+    var models: [(title: String, note: String, image: UIImage)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         vc.title = "New Note"
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.completion = { noteTitle, note in
+        vc.completion = { noteTitle, note, image in
             self.navigationController?.popToRootViewController(animated: true)
-            self.models.append((title: noteTitle, note: note))
+            self.models.append((title: noteTitle, note: note, image: image))
             self.label.isHidden = true
             self.table.isHidden = false
             self.table.reloadData()
@@ -59,7 +59,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let model = models[indexPath.row]
 
-        
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "note") as? NoteViewController else {
             return
         }
@@ -71,7 +70,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.title = "Note"
         vc.noteTitle = model.title
         vc.note = model.note
+        vc.image = model.image
 //        vc.image = String(imageTransfer.imageView)
+        
+        vc.completionNote = { noteTitle, note in
+            self.navigationController?.popToRootViewController(animated: true)
+            self.models[indexPath.row].title = noteTitle
+            self.models[indexPath.row].note = note
+            self.table.reloadData()
+        }
 
         navigationController?.pushViewController(vc, animated: true)
     }
